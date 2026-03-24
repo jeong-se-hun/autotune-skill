@@ -1,0 +1,32 @@
+Target:
+- docs/runbook.md
+
+Writable scope:
+- docs/runbook.md
+
+Immutable:
+- fixed question set
+- scoring rubric
+
+Optimize:
+- qa_accuracy max
+
+Guards:
+- stale_commands <= 0
+- contradiction_count <= 0
+
+Verify:
+- run fixed Q&A
+- execute one representative recovery task
+
+Budget:
+- 3
+
+Rollback:
+- restore touched files from /tmp snapshots
+
+Log:
+- /tmp/autotune-docs-runbook.tsv
+
+Baseline:
+- collect before first edit

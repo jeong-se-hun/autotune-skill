@@ -1,0 +1,21 @@
+{
+  "optimize": [
+    {
+      "name": "task_success_rate",
+      "direction": "max",
+      "min_delta": 0.02
+    }
+  ],
+  "guards": [
+    {
+      "name": "false_trigger_rate",
+      "kind": "relative_max",
+      "value": 1.0
+    },
+    {
+      "name": "avg_tokens",
+      "kind": "relative_max",
+      "value": 1.05
+    }
+  ]
+}

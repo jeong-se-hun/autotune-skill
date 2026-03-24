@@ -1,0 +1,32 @@
+{
+  "strategy": "primary",
+  "optimize": [
+    {"name": "routing_dataset_score", "direction": "max", "min_delta": 0.001},
+    {"name": "clarity_score", "direction": "max", "min_delta": 0.001},
+    {"name": "autonomy_score", "direction": "max", "min_delta": 0.001},
+    {"name": "tooling_coverage_score", "direction": "max", "min_delta": 0.001},
+    {"name": "proxy_trigger_score", "direction": "max", "min_delta": 0.001},
+    {"name": "live_trigger_score", "direction": "max", "min_delta": 0.001}
+  ],
+  "guards": [
+    {"name": "integrity_score", "kind": "absolute_min", "value": 1.0},
+    {"name": "portability_score", "kind": "absolute_min", "value": 1.0}
+  ],
+  "scorecard": {
+    "metrics": [
+      {"name": "routing_dataset_score", "weight": 0.20, "best": 1.0, "worst": 0.0},
+      {"name": "proxy_trigger_score", "weight": 0.15, "best": 1.0, "worst": 0.0},
+      {"name": "live_trigger_score", "weight": 0.15, "best": 1.0, "worst": 0.0},
+      {"name": "clarity_score", "weight": 0.15, "best": 1.0, "worst": 0.0},
+      {"name": "autonomy_score", "weight": 0.15, "best": 1.0, "worst": 0.0},
+      {"name": "tooling_coverage_score", "weight": 0.10, "best": 1.0, "worst": 0.0},
+      {"name": "integrity_score", "weight": 0.05, "best": 1.0, "worst": 0.0},
+      {"name": "portability_score", "weight": 0.05, "best": 1.0, "worst": 0.0}
+    ],
+    "keep_if_score_improves_by": 0.001,
+    "stop_if_score_at_least": 1.0
+  },
+  "targets": [
+    {"name": "overall_score", "kind": "at_least", "value": 1.0}
+  ]
+}

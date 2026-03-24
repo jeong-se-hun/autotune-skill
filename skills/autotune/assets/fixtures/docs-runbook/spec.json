@@ -1,0 +1,21 @@
+{
+  "optimize": [
+    {
+      "name": "qa_accuracy",
+      "direction": "max",
+      "min_delta": 0.05
+    }
+  ],
+  "guards": [
+    {
+      "name": "stale_commands",
+      "kind": "absolute_max",
+      "value": 0
+    },
+    {
+      "name": "contradiction_count",
+      "kind": "absolute_max",
+      "value": 0
+    }
+  ]
+}

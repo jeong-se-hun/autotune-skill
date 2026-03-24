@@ -1,0 +1,18 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "__SKILL_NAME__",
+  "description": "__PLUGIN_DESCRIPTION__",
+  "owner": {
+    "name": "__OWNER_NAME__"
+  },
+  "plugins": [
+    {
+      "name": "__SKILL_NAME__",
+      "source": "./",
+      "description": "__PLUGIN_DESCRIPTION__",
+      "skills": ["./skills/__SKILL_NAME__"],
+      "strict": false,
+      "category": "development"
+    }
+  ]
+}

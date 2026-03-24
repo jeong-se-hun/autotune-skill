@@ -1,0 +1,5 @@
+{
+  "name": "autotune",
+  "description": "Metric-driven improvement loop skill for measurable code, docs, prompt, and skill tuning.",
+  "skills": ["./skills/autotune"]
+}

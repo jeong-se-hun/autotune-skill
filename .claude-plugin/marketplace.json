@@ -1,0 +1,18 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "autotune",
+  "description": "Metric-driven improvement loop skill for measurable code, docs, prompt, and skill tuning.",
+  "owner": {
+    "name": "Jeong Se Hun"
+  },
+  "plugins": [
+    {
+      "name": "autotune",
+      "source": "./",
+      "description": "Metric-driven improvement loop skill for measurable code, docs, prompt, and skill tuning.",
+      "skills": ["./skills/autotune"],
+      "strict": false,
+      "category": "development"
+    }
+  ]
+}

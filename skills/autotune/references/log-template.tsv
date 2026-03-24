@@ -1,0 +1,5 @@
+iteration	mode	hypothesis	optimize_metric	overall_score	guard_summary	decision	target_status	stop_status	notes
+1	bounded	baseline	task_success_rate=0.68	0.6800	keep	keep	pending	active	initial baseline
+2	bounded	shorter description improves trigger precision	trigger_precision=0.72	0.7400	false_trigger_rate=0.08	keep	pending	active	held guards under threshold
+3	bounded	aggressive wording reduces ambiguity	trigger_precision=0.72	0.6900	false_trigger_rate=0.15	reject	pending	active	false positives increased
+4	threshold	eval contract changed; restart baseline	task_success_rate=0.74	0.7500	stale_command_count=0	reset_baseline	pending	active	new evaluator declared explicitly

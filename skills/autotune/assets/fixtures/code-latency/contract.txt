@@ -1,0 +1,35 @@
+Target:
+- src/feature_x.py
+- tests/test_feature_x.py
+
+Writable scope:
+- src/feature_x.py
+- tests/test_feature_x.py
+
+Immutable:
+- benchmark inputs
+- lint config
+- perf harness
+
+Optimize:
+- p95_latency_ms min
+
+Guards:
+- tests_failed <= 0
+- lint_errors <= 0
+
+Verify:
+- pytest tests/test_feature_x.py -q
+- python3 bench/feature_x.py --sample fixed
+
+Budget:
+- 3
+
+Rollback:
+- restore touched files from /tmp snapshots
+
+Log:
+- /tmp/autotune-code-latency.tsv
+
+Baseline:
+- collect before first edit

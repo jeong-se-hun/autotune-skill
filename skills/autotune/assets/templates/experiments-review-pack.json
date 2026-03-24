@@ -1,0 +1,28 @@
+{
+  "skill_name": "autotune",
+  "iteration": 0,
+  "summary": "Baseline versus candidate review pack. Replace the placeholder text with real artifacts before rendering.",
+  "cases": [
+    {
+      "id": "representative-case",
+      "title": "Representative case",
+      "prompt": "Fixed prompt or task shown to both baseline and candidate",
+      "baseline": {
+        "label": "Baseline",
+        "text": "Paste or summarize the baseline output here"
+      },
+      "candidate": {
+        "label": "Candidate",
+        "text": "Paste or summarize the candidate output here"
+      },
+      "metrics": {
+        "task_success": "0.72 -> 0.79",
+        "token_cost": "103 -> 101"
+      },
+      "notes": [
+        "Capture what changed, not just whether it felt better."
+      ],
+      "decision": "undecided"
+    }
+  ]
+}

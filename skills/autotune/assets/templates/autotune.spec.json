@@ -1,0 +1,46 @@
+{
+  "optimize": [
+    {
+      "name": "primary_metric",
+      "direction": "max",
+      "min_delta": 0.01
+    }
+  ],
+  "guards": [
+    {
+      "name": "tests_failed",
+      "kind": "absolute_max",
+      "value": 0
+    },
+    {
+      "name": "token_cost",
+      "kind": "relative_max",
+      "value": 1.05
+    }
+  ],
+  "scorecard": {
+    "metrics": [
+      {
+        "name": "primary_metric",
+        "weight": 0.7,
+        "best": 1.0,
+        "worst": 0.0
+      },
+      {
+        "name": "token_cost",
+        "weight": 0.3,
+        "best": 0.8,
+        "worst": 1.5
+      }
+    ],
+    "keep_if_score_improves_by": 0.01,
+    "stop_if_score_at_least": 0.92
+  },
+  "targets": [
+    {
+      "name": "overall_score",
+      "kind": "at_least",
+      "value": 0.92
+    }
+  ]
+}

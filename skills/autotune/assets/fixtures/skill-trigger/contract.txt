@@ -1,0 +1,34 @@
+Target:
+- SKILL.md
+- references/*
+
+Writable scope:
+- SKILL.md
+- references/*
+
+Immutable:
+- benchmark prompt set
+- scoring rubric
+
+Optimize:
+- task_success_rate max
+
+Guards:
+- false_trigger_rate <= baseline
+- avg_tokens <= baseline * 1.05
+
+Verify:
+- run fixed benchmark prompts
+- score against rubric
+
+Budget:
+- 3
+
+Rollback:
+- restore touched files from /tmp snapshots
+
+Log:
+- /tmp/autotune-skill-trigger.tsv
+
+Baseline:
+- collect before first edit

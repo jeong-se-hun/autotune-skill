@@ -1,0 +1,4 @@
+interface:
+  display_name: "Autotune"
+  short_description: "Run fixed-eval keep-or-reject loops for code, prompts, skills, docs, and tests with guards and stop rules"
+  default_prompt: "Use $autotune for code, prompts, skills, documentation, or tests when the task already has a fixed eval contract, blind comparison review pack, or holdout set, or when the user explicitly wants to build that evaluator first, then run a bounded, threshold, or continuous keep-or-reject improvement loop with explicit guards, binary checks where possible, and clear stop rules. Do not use it for 'keep going until it seems better', 'run as long as possible', 'stop when it seems better', or 'just start an infinite loop' requests that lack a target score or explicit stop rule."

@@ -1,0 +1,68 @@
+Target:
+- prompts/support-pack.md
+
+Writable scope:
+- prompts/support-pack.md
+
+Immutable:
+- fixed eval set
+- holdout eval set
+- scorer
+
+Eval set:
+- 24 benchmark prompts
+
+Holdout:
+- 8 prompts held out from tuning
+
+Optimize:
+- task_success_rate max
+
+Guards:
+- false_trigger_rate <= 0.05
+- avg_tokens <= baseline * 1.05
+
+Verify:
+- run benchmark prompts
+- run holdout prompts on retained candidates
+
+Review mode:
+- numeric only until retain, then batched review
+
+Loop mode:
+- threshold
+
+Autonomy:
+- high-autonomy
+
+Budget:
+- unlimited until stop rules fire
+
+Decision rule:
+- keep only if optimize improves, guards pass, and scorecard improves by at least 0.02
+
+Stop rules:
+- stop when overall_score >= 0.90
+- stop when task_success_rate >= 0.90
+- stop on max_reject_streak=8
+
+Rollback:
+- restore touched files from /tmp snapshots
+
+Log:
+- /tmp/autotune-threshold.tsv
+
+Dashboard:
+- /tmp/autotune-threshold-dashboard.md
+
+State file:
+- /tmp/autotune-threshold-state.json
+
+Baseline:
+- collect before first edit
+
+Current best:
+- baseline until replaced
+
+Next hypothesis:
+- note before each candidate

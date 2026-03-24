@@ -1,0 +1,4 @@
+Target: docs/policy.md
+Optimize: task_success_rate max
+Guards: required_sections_present >= 1, coverage_score >= baseline
+Verify: fixed policy benchmark

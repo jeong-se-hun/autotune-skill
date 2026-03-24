@@ -1,0 +1,191 @@
+[
+  {
+    "query": "테스트는 그대로 두고 이 모듈 p95 latency만 줄여줘. 벤치 스크립트는 이미 있고 3번 안에 keep-or-revert로 끝내면 돼.",
+    "should_trigger": true,
+    "split": "train",
+    "tags": [
+      "code",
+      "bounded",
+      "guards",
+      "fixed-eval"
+    ]
+  },
+  {
+    "query": "이 runbook은 고정 질문 세트 18개가 있고 stale command count도 측정돼. 답 정확도만 올리고 stale command는 baseline보다 나빠지면 안 돼.",
+    "should_trigger": true,
+    "split": "train",
+    "tags": [
+      "docs",
+      "guards",
+      "fixed-eval"
+    ]
+  },
+  {
+    "query": "우리 내부 프롬프트 팩에 대해 fixed eval set이 있어. exact-match accuracy를 올리되 average tokens는 5% 이상 늘리면 안 되고, 이번 턴은 4 iteration cap으로 가자.",
+    "should_trigger": true,
+    "split": "train",
+    "tags": [
+      "prompts",
+      "bounded",
+      "guards",
+      "fixed-eval"
+    ]
+  },
+  {
+    "query": "이 스킬 false positive가 자꾸 나와. realistic trigger eval 20개는 이미 있고 holdout도 있어. precision 올리되 valid positive는 떨어뜨리지 않게 수정해줘.",
+    "should_trigger": true,
+    "split": "holdout",
+    "tags": [
+      "skills",
+      "guards",
+      "fixed-eval",
+      "holdout"
+    ]
+  },
+  {
+    "query": "warning만 줄이면 돼. pytest랑 mypy는 지금 기준에서 하나도 더 깨지면 안 돼. verify command는 이미 정해져 있어.",
+    "should_trigger": true,
+    "split": "train",
+    "tags": [
+      "code",
+      "guards",
+      "fixed-eval"
+    ]
+  },
+  {
+    "query": "I have a bundle-size benchmark and a fixed input sample. Please shave bytes off this client package, but no new lint or type errors, and stop after three candidate edits.",
+    "should_trigger": true,
+    "split": "train",
+    "tags": [
+      "code",
+      "bounded",
+      "guards",
+      "fixed-eval"
+    ]
+  },
+  {
+    "query": "이 정책 문서 좀 더 설득력 있게 다듬어줘. 아직 점수표나 질문셋은 없고 그냥 읽기 좋게 만들고 싶어.",
+    "should_trigger": false,
+    "split": "train",
+    "tags": [
+      "review-first",
+      "open-ended",
+      "missing-eval"
+    ]
+  },
+  {
+    "query": "외부 reviewer 셋 불러서 이 설계문서 문제점부터 찾아줘. 그다음 어떤 걸 고칠지 정하자.",
+    "should_trigger": false,
+    "split": "train",
+    "tags": [
+      "review-first"
+    ]
+  },
+  {
+    "query": "이거 그냥 전반적으로 더 좋게 만들어봐. 기준은 네가 알아서 잡고 필요한 만큼 계속 돌려.",
+    "should_trigger": false,
+    "split": "train",
+    "tags": [
+      "open-ended",
+      "missing-eval"
+    ]
+  },
+  {
+    "query": "Can you first figure out what metric even matters here? We do not have benchmarks yet, just a vague sense that the support replies feel off.",
+    "should_trigger": false,
+    "split": "train",
+    "tags": [
+      "metric-discovery",
+      "missing-eval"
+    ]
+  },
+  {
+    "query": "고정 샘플 50개에 대해 OCR 후처리 정확도를 올리고 싶어. baseline score랑 token cost는 이미 있고, 이번엔 candidate별로 keep/revert 판단만 깔끔하게 해줘.",
+    "should_trigger": true,
+    "split": "train",
+    "tags": [
+      "code",
+      "fixed-eval",
+      "baseline"
+    ]
+  },
+  {
+    "query": "Cross-check this with another model and tell me what risks it sees. I care more about finding blind spots than improving a benchmark right now.",
+    "should_trigger": false,
+    "split": "holdout",
+    "tags": [
+      "review-first"
+    ]
+  },
+  {
+    "query": "이 프롬프트 팩 점수 0.92 넘길 때까지 계속 개선해줘. fixed eval set, holdout, hallucination guard, token guard 다 있고, target score 도달하면 자동으로 멈추면 돼.",
+    "should_trigger": true,
+    "split": "holdout",
+    "tags": [
+      "prompts",
+      "threshold",
+      "guards",
+      "fixed-eval",
+      "holdout"
+    ]
+  },
+  {
+    "query": "밤새 돌릴 거라서 candidate 하나씩만 바꾸면서 계속 개선해줘. baseline 먼저 잡고, keep-or-revert 로그 남기고, .autotune-off 생기면 멈추는 continuous loop로 해.",
+    "should_trigger": true,
+    "split": "train",
+    "tags": [
+      "continuous",
+      "baseline",
+      "stop-rules",
+      "high-autonomy"
+    ]
+  },
+  {
+    "query": "평가셋은 있는데 목표 점수도 stop rule도 아직 없어. 그냥 가능한 오래 자동으로 돌려보고 적당히 좋아지면 멈춰.",
+    "should_trigger": false,
+    "split": "holdout",
+    "tags": [
+      "missing-stop-rules"
+    ]
+  },
+  {
+    "query": "이 스킬 튜닝을 하고 싶은데 아직 routing benchmark가 없어. 먼저 realistic eval harness 12개랑 holdout부터 설계하고 baseline까지 잡는 준비 루프를 시작해줘.",
+    "should_trigger": true,
+    "split": "holdout",
+    "tags": [
+      "eval-first",
+      "skills",
+      "holdout",
+      "baseline"
+    ]
+  },
+  {
+    "query": "이 서비스가 왜 느린지 원인부터 찾아줘. 아직 benchmark도 guard도 없고 일단 병목 조사와 debugging이 먼저야.",
+    "should_trigger": false,
+    "split": "holdout",
+    "tags": [
+      "debugging-first",
+      "missing-eval"
+    ]
+  },
+  {
+    "query": "운영 문서 fixed Q&A 15개랑 blind comparison review pack이 있어. contradiction 0 유지하면서 task success를 올리는 loop를 잡아줘.",
+    "should_trigger": true,
+    "split": "holdout",
+    "tags": [
+      "docs",
+      "human-review",
+      "fixed-eval",
+      "guards"
+    ]
+  },
+  {
+    "query": "I have a fixed eval set (30 samples) for my prompt pack. No target score or stop rule yet — just run as long as you can and stop whenever it feels good enough.",
+    "should_trigger": false,
+    "split": "train",
+    "tags": [
+      "missing-stop-rules",
+      "english"
+    ]
+  }
+]

@@ -1,0 +1,21 @@
+{
+  "optimize": [
+    {
+      "name": "task_success_rate",
+      "direction": "max",
+      "min_delta": 0.02
+    }
+  ],
+  "guards": [
+    {
+      "name": "required_sections_present",
+      "kind": "absolute_min",
+      "value": 1
+    },
+    {
+      "name": "coverage_score",
+      "kind": "relative_min",
+      "value": 1.0
+    }
+  ]
+}

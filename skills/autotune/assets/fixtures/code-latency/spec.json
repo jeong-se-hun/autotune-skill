@@ -1,0 +1,21 @@
+{
+  "optimize": [
+    {
+      "name": "p95_latency_ms",
+      "direction": "min",
+      "min_delta": 5
+    }
+  ],
+  "guards": [
+    {
+      "name": "tests_failed",
+      "kind": "absolute_max",
+      "value": 0
+    },
+    {
+      "name": "lint_errors",
+      "kind": "absolute_max",
+      "value": 0
+    }
+  ]
+}

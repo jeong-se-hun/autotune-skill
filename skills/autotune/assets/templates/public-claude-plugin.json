@@ -1,0 +1,5 @@
+{
+  "name": "__SKILL_NAME__",
+  "description": "__PLUGIN_DESCRIPTION__",
+  "skills": ["./skills/__SKILL_NAME__"]
+}

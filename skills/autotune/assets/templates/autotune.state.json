@@ -1,0 +1,13 @@
+{
+  "status": "active",
+  "loop_mode": "bounded",
+  "autonomy": "supervised",
+  "iteration": 0,
+  "best_iteration": 0,
+  "last_decision": "baseline",
+  "best_score": null,
+  "target_reached": false,
+  "consecutive_rejects": 0,
+  "consecutive_non_improving": 0,
+  "stop_reason": null
+}
